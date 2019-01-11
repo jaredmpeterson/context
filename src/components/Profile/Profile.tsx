@@ -1,11 +1,11 @@
 import React, { FC } from 'react'
 
-import { AuthContext } from '@src/containers/App/App'
+import { AuthConsumer } from '@src/context/auth'
 
 import styles from './styles'
 
 const Profile: FC = props => (
-  <AuthContext.Consumer>
+  <AuthConsumer>
     {context => {
       return (
         <h1 css={styles.Profile}>
@@ -13,7 +13,7 @@ const Profile: FC = props => (
         </h1>
       )
     }}
-  </AuthContext.Consumer>
+  </AuthConsumer>
 )
 
 export default Profile

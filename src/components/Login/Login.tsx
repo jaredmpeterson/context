@@ -1,19 +1,20 @@
-import React, { FC } from 'react'
+import React, { Component } from 'react'
 
-import { AuthContext } from '@src/containers/App/App'
+import AuthContext from '@src/context/auth'
 
 import styles from './styles'
 
-const Login: FC = props => (
-  <AuthContext.Consumer>
-    {authContext => {
-      return (
-        <button css={styles.Login} onClick={authContext.toggleAuth}>
-          {authContext.isAuth ? 'Logout' : 'Login'}
-        </button>
-      )
-    }}
-  </AuthContext.Consumer>
-)
+class Login extends Component {
+  static contextType = AuthContext
+
+  render() {
+    const { isAuth, toggleAuth } = this.context
+    return (
+      <button css={styles.Login} onClick={toggleAuth}>
+        {isAuth ? 'Logout' : 'Login'}
+      </button>
+    )
+  }
+}
 
 export default Login

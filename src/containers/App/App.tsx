@@ -1,17 +1,12 @@
-import React, { Component, createContext } from 'react'
+import React, { Component } from 'react'
 
 // @src imports
 import Login from '@src/components/Login/Login'
 import Profile from '@src/components/Profile/Profile'
+import { AuthProvider } from '@src/context/auth'
 
 // styles
 import styles from './styles'
-
-export const AuthContext = createContext({
-  isAuth: false,
-  // tslint:disable-next-line:no-empty
-  toggleAuth: () => {},
-})
 
 type AppProps = {}
 
@@ -35,14 +30,14 @@ class App extends Component<AppProps, State> {
     const { isAuth } = this.state
     const { toggleAuth } = this
     return (
-      <AuthContext.Provider value={{ isAuth, toggleAuth }}>
+      <AuthProvider value={{ isAuth, toggleAuth }}>
         <div css={styles.App}>
           <header css={styles.AppHeader}>
             <Profile />
             <Login />
           </header>
         </div>
-      </AuthContext.Provider>
+      </AuthProvider>
     )
   }
 }
