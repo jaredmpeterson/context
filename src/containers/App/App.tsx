@@ -1,11 +1,8 @@
 import React, { Component } from 'react'
 
 // @src imports
-// import Child from '@src/components/Child/Child'
 import Grandparent from '@src/components/Grandparent/Grandparent'
 import Login from '@src/components/Login/Login'
-// import Parent from '@src/components/Parent/Parent'
-// import Profile from '@src/components/Profile/Profile'
 import { AuthProvider } from '@src/context/auth'
 
 // styles
