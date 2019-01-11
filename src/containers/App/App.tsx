@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 
 // @src imports
-import Child from '@src/components/Child/Child'
+// import Child from '@src/components/Child/Child'
 import Grandparent from '@src/components/Grandparent/Grandparent'
 import Login from '@src/components/Login/Login'
-import Parent from '@src/components/Parent/Parent'
-import Profile from '@src/components/Profile/Profile'
+// import Parent from '@src/components/Parent/Parent'
+// import Profile from '@src/components/Profile/Profile'
 import { AuthProvider } from '@src/context/auth'
 
 // styles
@@ -36,13 +36,7 @@ class App extends Component<AppProps, State> {
       <AuthProvider value={{ isAuth, toggleAuth }}>
         <div css={styles.App}>
           <header css={styles.AppHeader}>
-            <Grandparent>
-              <Parent>
-                <Child>
-                  <Profile />
-                </Child>
-              </Parent>
-            </Grandparent>
+            <Grandparent />
             <Login />
           </header>
         </div>

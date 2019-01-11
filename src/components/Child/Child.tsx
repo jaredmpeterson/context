@@ -1,5 +1,11 @@
-import React, { FC } from 'react'
+import React, { FC, Fragment } from 'react'
 
-const Child: FC = props => <div>{props.children}</div>
+import Profile from '@src/components/Profile/Profile'
+
+const Child: FC = props => (
+  <Fragment>
+    <Profile />
+  </Fragment>
+)
 
 export default Child
