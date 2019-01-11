@@ -1,3 +1,3 @@
 ```jsx
-<Login />
+<Login isAuth={true} />
 ```
