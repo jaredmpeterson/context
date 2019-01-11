@@ -1,16 +1,17 @@
 import React, { Component } from 'react'
 
-import AuthContext from '@src/context/auth'
-
 import styles from './styles'
 
-class Login extends Component {
-  static contextType = AuthContext
+type LoginProps = {
+  isAuth: boolean
+  clicked: () => void
+}
 
+class Login extends Component<LoginProps, {}> {
   render() {
-    const { isAuth, toggleAuth } = this.context
+    const { clicked, isAuth } = this.props
     return (
-      <button css={styles.Login} onClick={toggleAuth}>
+      <button css={styles.Login} onClick={clicked}>
         {isAuth ? 'Logout' : 'Login'}
       </button>
     )

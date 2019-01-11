@@ -1,3 +1,7 @@
 ```jsx
-<Profile />
+<Profile authenticated={true} />
+```
+
+```jsx
+<Profile authenticated={false} />
 ```

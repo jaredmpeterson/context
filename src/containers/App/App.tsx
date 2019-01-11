@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 // @src imports
 import Grandparent from '@src/components/Grandparent/Grandparent'
 import Login from '@src/components/Login/Login'
-import { AuthProvider } from '@src/context/auth'
 
 // styles
 import styles from './styles'
@@ -30,14 +29,12 @@ class App extends Component<AppProps, State> {
     const { isAuth } = this.state
     const { toggleAuth } = this
     return (
-      <AuthProvider value={{ isAuth, toggleAuth }}>
-        <div css={styles.App}>
-          <header css={styles.AppHeader}>
-            <Grandparent />
-            <Login />
-          </header>
-        </div>
-      </AuthProvider>
+      <div css={styles.App}>
+        <header css={styles.AppHeader}>
+          <Grandparent userAuth={isAuth} />
+          <Login clicked={toggleAuth} isAuth={isAuth} />
+        </header>
+      </div>
     )
   }
 }
