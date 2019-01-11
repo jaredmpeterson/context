@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 
 // @src imports
 import logo from '@src/assets/logo.svg'
+import Version from '@src/components/Version/Version'
 
 // relative imports
-import Version from '../Version/Version'
 
 // styles
 import styles from './styles'
