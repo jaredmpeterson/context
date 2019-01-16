@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, ContextType } from 'react'
 
 import AuthContext from '@src/context/auth'
 
@@ -6,6 +6,7 @@ import styles from './styles'
 
 class Login extends Component {
   static contextType = AuthContext
+  context!: ContextType<typeof AuthContext>
 
   render() {
     const { isAuth, toggleAuth } = this.context
